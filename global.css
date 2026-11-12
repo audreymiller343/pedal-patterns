@@ -1,11 +1,14 @@
 
-body {
+html {
   font: 100%/1.5 system-ui, sans-serif;
-  display: flex;
-  flex-flow: column;
-  max-width: 80em;
+}
+
+body {
+  max-width: 1355px;
   min-height: 100vh;
+  margin: 0 auto;
+  padding: 2rem 1rem;
   box-sizing: border-box;
-  margin: auto;
-  padding: 1em;
+  background: white;
+  color: black;
 }

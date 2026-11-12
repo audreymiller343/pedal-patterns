@@ -1,9 +1,156 @@
 
-#map {
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.time-filter {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-left: auto;
+  padding-top: 0.75rem;
+}
+
+.time-filter label {
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 435px;
+  max-width: 35vw;
+}
+
+#time-slider {
   width: 100%;
-  height: 650px;
-  min-height: 400px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 0;
+  cursor: pointer;
+  accent-color: #1677ff;
+}
+
+.time-display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-height: 3.5rem;
+  margin-top: 0.5rem;
+}
+
+#any-time {
+  color: #777;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+#selected-time {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+#map {
+  position: relative;
+  width: 100%;
+  height: 740px;
   overflow: hidden;
+}
+
+#map svg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#map circle,
+.legend-item {
+  --color-departures: steelblue;
+  --color-arrivals: darkorange;
+  --color: color-mix(
+    in oklch,
+    var(--color-departures) calc(100% * var(--departure-ratio)),
+    var(--color-arrivals)
+  );
+}
+
+#map circle {
+  fill: var(--color);
+  fill-opacity: 0.6;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1.25rem 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.legend-title {
+  font-weight: 700;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-swatch {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: var(--color);
+  border-radius: 4px;
+}
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.7rem;
+  }
+
+  .time-filter {
+    width: 100%;
+    margin-left: 0;
+    padding-top: 0;
+  }
+
+  .slider-container {
+    flex: 1;
+    width: auto;
+    max-width: none;
+  }
+
+  #map {
+    height: 550px;
+  }
+
+  .legend {
+    gap: 1rem;
+  }
 }
