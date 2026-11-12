@@ -1,9 +1,9 @@
 
 import mapboxgl from 'https://cdn.jsdelivr.net/npm/mapbox-gl@2.15.0/+esm';
-import { MAPBOX_TOKEN } from './config.js';
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
 
-mapboxgl.accessToken = MAPBOX_TOKEN;
+// Mapbox public tokens are intended for use in browser code.
+mapboxgl.accessToken = 'pk.eyJ1IjoiYW1tMDI2IiwiYSI6ImNtd2R4b2x0djA5OTQzMG9kMnBsdnk2OW0ifQ.tjwaqR3yEyjQTrmXVTNvpw';
 
 const map = new mapboxgl.Map({
   container: 'map',
