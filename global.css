@@ -3,6 +3,12 @@ html {
   font: 100%/1.5 system-ui, sans-serif;
 }
 
+.project-intro p {
+  margin: 0.5rem 0 0;
+  max-width: 42ch;
+  color: #555;
+}
+
 body {
   max-width: 1355px;
   min-height: 100vh;
